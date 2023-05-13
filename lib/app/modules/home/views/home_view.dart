@@ -25,22 +25,23 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       key: _key,
       backgroundColor: AppColors.colorDark,
-      // appBar: AppBar(
-      //   title: const Text('HomeView'),
-      //   centerTitle: true,
-      // ),
+      appBar: AppBar(
+        toolbarHeight: 0,
+        elevation: 0,
+        backgroundColor: AppColors.colorDark,
+        centerTitle: true,
+      ),
       endDrawer: Drawer(
         child: Column(
           children: [
             Expanded(
               child: ListView(
                 // scrollDirection: Axis.horizontal,
-
                 children: [
                   ...settingController.filterList.map((e) {
                     return const ExpansionTile(
-                      title:  Row(
-                        children:  [
+                      title: Row(
+                        children: [
                           Text(
                             "Genres",
                             style: TextStyle(
@@ -56,7 +57,7 @@ class HomeView extends GetView<HomeController> {
                           runAlignment: WrapAlignment.start,
                           spacing: 5,
                           runSpacing: 5,
-                          children:  [
+                          children: [
                             ShapeGenre(title: "Action"),
                             ShapeGenre(title: "Aventure"),
                             ShapeGenre(title: "Jeux"),
@@ -67,7 +68,7 @@ class HomeView extends GetView<HomeController> {
                   }),
                   const ExpansionTile(
                     title: Row(
-                      children:  [
+                      children: [
                         Text(
                           "Genres",
                           style: TextStyle(
@@ -83,7 +84,7 @@ class HomeView extends GetView<HomeController> {
                         runAlignment: WrapAlignment.start,
                         spacing: 5,
                         runSpacing: 5,
-                        children:  [
+                        children: [
                           ShapeGenre(title: "Action"),
                           ShapeGenre(title: "Aventure"),
                           ShapeGenre(title: "Jeux"),
@@ -91,8 +92,8 @@ class HomeView extends GetView<HomeController> {
                       )
                     ],
                   ),
-                  const  ExpansionTile(
-                    title:  Text(
+                  const ExpansionTile(
+                    title: Text(
                       "Tags",
                       style: TextStyle(
                           fontSize: 20,
@@ -104,7 +105,7 @@ class HomeView extends GetView<HomeController> {
                         runAlignment: WrapAlignment.start,
                         spacing: 5,
                         runSpacing: 5,
-                        children:  [
+                        children: [
                           ShapeGenre(title: "Action"),
                           ShapeGenre(title: "Aventure"),
                           ShapeGenre(title: "Jeux"),
